@@ -72,6 +72,7 @@ function getWinner(playerMove,computerMove) {
             winner = "Please pick rock, paper, or scissors."
             break;
     }
+    return winner;
 }
 
 function playToFive() {
