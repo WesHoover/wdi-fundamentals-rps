@@ -42,35 +42,37 @@ function getWinner(playerMove,computerMove) {
     // The rules of the game are that 'rock' beats 'scissors', 'scissors' beats 'paper', and 'paper' beats 'rock'.
     if (playerMove === computerMove) {
     winner = "tie";
-    }
-    switch (playerMove) {  
-        case 'rock':
-            if (computerMove === "paper") {
-                winner = "computer";
-            }
-            else if (computerMove === "scissors") {
-                winner = "player";
-            }
-            break;    
-        case 'paper':
-            if (computerMove === "scissors") {
-                winner = "computer";
-            }
-            else if (computerMove === "rock") {
-                winner = "player";
-            }
-            break;    
-        case 'scissors':
-            if (computerMove === "rock") {
-                winner = "computer";
-            }
-            else if (computerMove === "paper") {
-                winner = "player";
-            }
-            break;    
-        default : 
-            winner = "Please pick rock, paper, or scissors."
-            break;
+    return winner;
+    } else {
+        switch (playerMove) {  
+            case 'rock':
+                if (computerMove === "paper") {
+                    winner = "computer";
+                }
+                else if (computerMove === "scissors") {
+                    winner = "player";
+                }
+                break;    
+            case 'paper':
+                if (computerMove === "scissors") {
+                    winner = "computer";
+                }
+                else if (computerMove === "rock") {
+                    winner = "player";
+                }
+                break;    
+            case 'scissors':
+                if (computerMove === "rock") {
+                    winner = "computer";
+                }
+                else if (computerMove === "paper") {
+                    winner = "player";
+                }
+                break;    
+            default : 
+                winner = "Please pick rock, paper, or scissors."
+                break;
+        }
     }
     return winner;
 }
