@@ -43,35 +43,40 @@ function getWinner(playerMove,computerMove) {
     // The rules of the game are that 'rock' beats 'scissors', 'scissors' beats 'paper', and 'paper' beats 'rock'.
     if (playerMove === computerMove) {
         winner = "tie";
-        return winner;
     } else {
         switch (playerMove) {  
-            case 'rock':
+            case "rock":
                 if (computerMove === "paper") {
-                    winner = "computer";
+                    winner = "Computer";
                 }
                 else if (computerMove === "scissors") {
-                    winner = "player";
+                    winner = "Player";
                 }
                 break;    
-            case 'paper':
+            case "paper":
                 if (computerMove === "scissors") {
-                    winner = "computer";
+                    winner = "Computer";
                 }
                 else if (computerMove === "rock") {
-                    winner = "player";
+                    winner = "Player";
                 }
                 break;    
-            case 'scissors':
+            case "scissors":
                 if (computerMove === "rock") {
-                    winner = "computer";
+                    winner = "Computer";
                 }
                 else if (computerMove === "paper") {
-                    winner = "player";
+                    winner = "Player";
                 }
-                break;    
+                break; 
+            case "q":
+                winner = "quit";
+                break;
+            case "quit":
+                winner = "quit";
+                break;
             default : 
-                winner = "Oops! Clumsy fingers? ;) Please type rock, paper, or scissors.";
+                winner = "error";
                 break;
         }
     }
@@ -89,9 +94,18 @@ function playToFive() {
         console.log("Score is, Player: " + playerWins + " to Computer: " + computerWins + "\n");
         var playerMove = getPlayerMove();
         var computerMove = getComputerMove();
-        console.log("You played " + playerMove + " and the Computer played " + computerMove);
         var winner = getWinner(playerMove,computerMove);
-            if (playerWins === 5 || computerWins === 5) {
+            if (winner === "quit") {
+                console.log("******Alrighty then, exiting the game******"); 
+            } else if (winner === "error") {
+                console.log("Oops! Clumsy fingers? ;) PLease, try that again.");
+            } else {    
+                console.log("You played " + playerMove + " and the Computer played " + computerMove);
+            }
+            
+            if (winner === "quit") {
+                break;
+            } else if (playerWins === 5 || computerWins === 5) {
                 break;
             } else if (winner === "Player") {
                 playerWins ++ ;
@@ -101,12 +115,12 @@ function playToFive() {
                 console.log(winner + " " + "wins this round.");
             } else if (winner === "tie") {
                 console.log("You tied, keep playing!");
-            }
+            } 
+            
     }
     return [playerWins, computerWins];
 
 }
-
 function playTo(x) {
     console.log("Let's play Rock, Paper, Scissors");
     var playerWins = 0;
