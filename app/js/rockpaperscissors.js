@@ -100,7 +100,7 @@ function playToFive() {
             } else if (winner === "error") {
                 console.log("Oops! Clumsy fingers? ;) PLease, try that again.");
             } else {    
-                console.log("You played " + playerMove + " and the Computer played " + computerMove);
+                console.log("You played " + playerMove + " and the Computer played " + computerMove + ".");
             }
             
             if (winner === "quit") {
@@ -116,11 +116,16 @@ function playToFive() {
             } else if (winner === "tie") {
                 console.log("You tied, keep playing!");
             } 
-            
+    }
+    if (playerWins === 5) {
+        console.log("You WON this game!"); 
+    } else if (computerWins === 5) {
+        console.log("Computer won this game. :(");
     }
     return [playerWins, computerWins];
 
 }
+
 function playTo(x) {
     console.log("Let's play Rock, Paper, Scissors");
     var playerWins = 0;
@@ -132,9 +137,18 @@ function playTo(x) {
         console.log("Score is, Player: " + playerWins + " to Computer: " + computerWins + "\n");
         var playerMove = getPlayerMove();
         var computerMove = getComputerMove();
-        console.log("You played " + playerMove + " and the Computer played " + computerMove);
         var winner = getWinner(playerMove,computerMove);
-            if (playerWins === x || computerWins === x) {
+            if (winner === "quit") {
+                console.log("******Alrighty then, exiting the game******"); 
+            } else if (winner === "error") {
+                console.log("Oops! Clumsy fingers? ;) PLease, try that again.");
+            } else {    
+                console.log("You played " + playerMove + " and the Computer played " + computerMove + ".");
+            }
+            
+            if (winner === "quit") {
+                break;
+            } else if (playerWins === x || computerWins === x) {
                 break;
             } else if (winner === "Player") {
                 playerWins ++ ;
@@ -144,7 +158,13 @@ function playTo(x) {
                 console.log(winner + " " + "wins this round.");
             } else if (winner === "tie") {
                 console.log("You tied, keep playing!");
-            }
+            } 
+            
+    }
+    if (playerWins === x) {
+        console.log("You WON this game!"); 
+    } else if (computerWins === x) {
+        console.log("Computer won this game. :(");
     }
     return [playerWins, computerWins];
 
