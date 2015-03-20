@@ -96,9 +96,9 @@ function playToFive() {
         var computerMove = getComputerMove();
         var winner = getWinner(playerMove,computerMove);
             if (winner === "quit") {
-                console.log("******Alrighty then, exiting the game******"); 
+                console.log("****** Alrighty then, exiting the game ******"); 
             } else if (winner === "error") {
-                console.log("Oops! Clumsy fingers? ;) PLease, try that again.");
+                console.log("Oops! Clumsy fingers? ;) Please, try that again.");
             } else {    
                 console.log("You played " + playerMove + " and the Computer played " + computerMove + ".");
             }
@@ -120,7 +120,7 @@ function playToFive() {
     if (playerWins === 5) {
         console.log("You WON this game!"); 
     } else if (computerWins === 5) {
-        console.log("Computer won this game. :(");
+        console.log("Computer won this game. :( ");
     }
     return [playerWins, computerWins];
 
@@ -141,7 +141,7 @@ function playTo(x) {
             if (winner === "quit") {
                 console.log("******Alrighty then, exiting the game******"); 
             } else if (winner === "error") {
-                console.log("Oops! Clumsy fingers? ;) PLease, try that again.");
+                console.log("Oops! Clumsy fingers? ;) Please, try that again.");
             } else {    
                 console.log("You played " + playerMove + " and the Computer played " + computerMove + ".");
             }
@@ -164,7 +164,7 @@ function playTo(x) {
     if (playerWins === x) {
         console.log("You WON this game!"); 
     } else if (computerWins === x) {
-        console.log("Computer won this game. :(");
+        console.log("Computer won this game. :( ");
     }
     return [playerWins, computerWins];
 
