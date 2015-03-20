@@ -126,7 +126,7 @@ function playToFive() {
 
 }
 
-function playTo(x) {
+function playTo(x) {    //Plays to specified round number
     console.log("Let's play Rock, Paper, Scissors");
     var playerWins = 0;
     var computerWins = 0;
